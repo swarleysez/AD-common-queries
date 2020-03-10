@@ -80,7 +80,11 @@ $pwdLastSetGT1Yr.Count
 ```
 ** $pwdLastSetTable | foreach([datetime]::FromFileTime($_.Item()))
 
-
+### Get Active Accounts that haven't been logged into in over 90 days
+```
+$90Days = (get-date).adddays(-90)
+Get-ADUser -properties * -filter {(lastlogondate -notlike "*" -OR lastlogondate -le $90days) -AND (passwordlastset -le $90days) -AND (enabled -eq $True) -and (PasswordNeverExpires -eq $false) -and (whencreated -le $90days)} | select-object name, SAMaccountname, passwordExpired, PasswordNeverExpires, logoncount, whenCreated, lastlogondate, PasswordLastSet, lastlogontimestamp
+```
 
 
 ### Domain Password Policy (including complexity)
