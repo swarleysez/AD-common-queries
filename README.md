@@ -37,7 +37,7 @@ $usersPwdNExp.Count
 ```
 
 ### Get Count of All Disabled Accounts (Using ADSI or Get-ADUser)
-****NEED Get-ADUser syntax****
+*Need Get-ADUser syntax
 
 ```
 $searchUsers = [adsisearcher]"(&(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2))"
@@ -57,7 +57,7 @@ $usersIntDomTrst.Count
 ```
 
 ### Get Count of Inter Domain Trust Accounts (Using ADSI or Get-ADUser)
-****NEED Get-ADUser syntax****
+*Need Get-ADUser syntax
 
 ```
 $searchUsers = [adsisearcher]"(&(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=2560)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))"
@@ -67,7 +67,7 @@ $usersIntDomTrt.Count
 ```
 
 ### Get Active Accounts with Passwords Older than 1 Year (Using ADSI or Get-ADUser)
-****NEED Get-ADUser syntax****
+*Need Get-ADUser syntax
 
 ```
 $searchUsers = [adsisearcher]"(&(objectCategory=person)(objectClass=user)(userAccountControl:1.2.840.113556.1.4.803:=512)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))"
