@@ -1,5 +1,5 @@
-# adsi-queries
-Collection of common ADSI queries for Domain Account enumeration
+# Common Active Directory Queries
+Collection of common queries for Domain Account enumeration
 
 
 
